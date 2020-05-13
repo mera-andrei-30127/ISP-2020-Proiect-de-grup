@@ -2,3 +2,4 @@
 
 Nagy Paula
 Pitu Veronica
+Morar Giorgiana

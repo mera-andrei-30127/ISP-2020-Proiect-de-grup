@@ -47,5 +47,6 @@ public class User {
      */
     public void submitCart() {
         throw new UnsupportedOperationException("Not supported yet.");
+        System.out.println();
     }
 }

@@ -8,8 +8,7 @@ public class Shop {
     private String city;
 
     public Shop(String name, String city) {
-        this.city = city;
-        this.name = name;
+
     }
 
     public Shop(String name) {

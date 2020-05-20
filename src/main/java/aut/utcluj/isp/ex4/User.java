@@ -9,6 +9,7 @@ public class User {
 
     public User(Double userMoney) {
         this.userMoney = userMoney;
+        this.userCart = new UserCart();
     }
 
     public UserCart getUserCart() {
@@ -26,7 +27,7 @@ public class User {
      * @param quantity - quantity to be added
      */
     public void addProductToCart(Product product, int quantity) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        userCart.addProductToCart(product, quantity);
     }
 
     /**
@@ -35,8 +36,10 @@ public class User {
      *
      * @param productId - unique product id
      */
-    public void removeProductFromCart(final String productId) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void removeProductFromCart(final String productId) throws ProductNotFoundException {
+
+        userCart.removeProductFromCart(productId);
+
     }
 
     /**
@@ -45,8 +48,13 @@ public class User {
      * If userMoney is less than total price of the products, an {@link NotEnoughMoneyException} exception will be thrown
      * If userMoney is greater or equal to the total price of the products, total price should be extracted from total money and cart to be reset to default values
      */
-    public void submitCart() {
-        throw new UnsupportedOperationException("Not supported yet.");
-
+    public void submitCart() throws NotEnoughMoneyException {
+        if (userMoney < userCart.getTotalPrice()) {
+            throw new NotEnoughMoneyException();
+        } else if (userMoney >= userCart.getTotalPrice()) {
+            userMoney = userMoney - userCart.getTotalPrice();
+            userCart.resetCart();
+        }
     }
+
 }

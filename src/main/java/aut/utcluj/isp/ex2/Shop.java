@@ -8,12 +8,8 @@ public class Shop {
     private String city;
 
     public Shop(String name, String city) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    public Shop(String name) {
-        this.city = "";
-        throw new UnsupportedOperationException("Not supported yet.");
+        this.name = name;
+        this.city = city;
     }
 
     public String getName() {

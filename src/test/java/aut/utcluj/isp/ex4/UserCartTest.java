@@ -37,7 +37,11 @@ public class UserCartTest {
 
         final List<Product> productsBeforeRemove = userCart.getCardProducts();
         assertEquals("Cart size should be 4", 4, productsBeforeRemove.size());
-        userCart.removeProductFromCart("p_2");
+        try {
+            userCart.removeProductFromCart("p_2");
+        } catch (ProductNotFoundException e) {
+            e.printStackTrace();
+        }
         final List<Product> productsAfterRemove = userCart.getCardProducts();
         assertEquals("Cart size should be 3", 3, productsAfterRemove.size());
         assertEquals("First product should have p_1 id", "p_1", productsAfterRemove.get(0).getProductId());
@@ -47,7 +51,7 @@ public class UserCartTest {
     }
 
     @Test(expected = ProductNotFoundException.class)
-    public void testRemoveProductFromCartThrowsExceptionWhenNoProductFound() {
+    public void testRemoveProductFromCartThrowsExceptionWhenNoProductFound() throws ProductNotFoundException {
         final UserCart userCart = new UserCart();
         userCart.removeProductFromCart("p_1");
     }
@@ -64,7 +68,7 @@ public class UserCartTest {
             final String expectedResult = "Product id: p_1, Items: 2\n" +
                     "Product id: p_2, Items: 1\n" +
                     "Total price: 400.0";
-            final String cartDetails = ((ICartDetails)userCart).getCartDetails();
+            final String cartDetails = ((ICartDetails) userCart).getCartDetails();
             assertNotNull("Cart details should not be null", cartDetails);
             assertEquals("Cart details should be the same", expectedResult, cartDetails);
         } catch (ClassCastException ex) {

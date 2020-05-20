@@ -8,7 +8,8 @@ public class Product {
     private Double price;
 
     public Product(String productId, Double price) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        this.price = price;
+        this.productId = productId;
     }
 
     public String getProductId() {
@@ -18,4 +19,5 @@ public class Product {
     public Double getPrice() {
         return price;
     }
+
 }

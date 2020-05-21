@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/.idea/ISP-2020-Proiect-de-grup.iml" filepath="$PROJECT_DIR$/.idea/ISP-2020-Proiect-de-grup.iml" />
-      <module fileurl="file://$PROJECT_DIR$/c4-samples/colocviu-demo.iml" filepath="$PROJECT_DIR$/c4-samples/colocviu-demo.iml" />
-=======
       <module fileurl="file://$PROJECT_DIR$/colocviu-demo.iml" filepath="$PROJECT_DIR$/colocviu-demo.iml" />
->>>>>>> a8b1f7187781f0950ba4fb2bcf23d8d604596271
     </modules>
   </component>
 </project>

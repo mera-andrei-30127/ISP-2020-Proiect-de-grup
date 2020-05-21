@@ -1,4 +1,4 @@
-<<<<<<< HEAD:c4-samples/src/main/java/aut/utcluj/isp/ex1/Shop.java
+
 package aut.utcluj.isp.ex1;
 
 import java.util.Objects;
@@ -51,32 +51,3 @@ public class Shop {
                 " City: " + city;
     }
 }
-=======
-package aut.utcluj.isp.ex1;
-
-/**
- * @author stefan
- */
-public class Shop {
-    private String name;
-    private String city;
-
-    public Shop(String name, String city) {
-        this.name = name;
-        this.city = city;
-    }
-
-    public Shop(String name) {
-        this.city = "";
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getCity() {
-        return city;
-    }
-}
->>>>>>> a8b1f7187781f0950ba4fb2bcf23d8d604596271:src/main/java/aut/utcluj/isp/ex1/Shop.java

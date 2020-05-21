@@ -1,5 +1,7 @@
 package aut.utcluj.isp.ex3;
 
+import java.util.Objects;
+
 /**
  * @author stefan
  */
@@ -9,7 +11,26 @@ public class Product {
     private Double price;
 
     public Product(String id, String name, Double price) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        //throw new UnsupportedOperationException("Not supported yet.");
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
+
+    public Product(String id) {
+        this.id = id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     public String getId() {
@@ -23,4 +44,21 @@ public class Product {
     public Double getPrice() {
         return price;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Product)) return false;
+        Product product = (Product) o;
+        return Objects.equals(id, product.id) &&
+                Objects.equals(name, product.name) &&
+                Objects.equals(price, product.price);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, name, price);
+    }
 }
+

@@ -26,7 +26,7 @@ public class User {
      * @param quantity - quantity to be added
      */
     public void addProductToCart(Product product, int quantity) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        //throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /**
@@ -36,7 +36,7 @@ public class User {
      * @param productId - unique product id
      */
     public void removeProductFromCart(final String productId) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        //throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /**
@@ -46,7 +46,7 @@ public class User {
      * If userMoney is greater or equal to the total price of the products, total price should be extracted from total money and cart to be reset to default values
      */
     public void submitCart() {
-        throw new UnsupportedOperationException("Not supported yet.");
-        System.out.println();
+       // throw new UnsupportedOperationException("Not supported yet.");
+      //  System.out.println();
     }
 }

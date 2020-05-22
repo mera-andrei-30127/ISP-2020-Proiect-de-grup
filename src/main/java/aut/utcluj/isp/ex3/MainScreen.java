@@ -4,10 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MainScreen extends JFrame {
-   StockController controller = new StockController();
-   /*
+    StockController controller = new StockController();
+
 
     private JTextField pinProductId;
+    private JTextField pinProductPrice;
     private JButton addProductToCatalogueButton;
     private JButton updateProducePriceButton;
     //private JTextField doorStatusTextField;
@@ -16,26 +17,30 @@ public class MainScreen extends JFrame {
     public MainScreen(StockController controller) throws HeadlessException {
         this.controller = controller;
         this.initializeUiComponents();
-        this.initializeHandlers();
-        this.setComponentsDefaultValues();
+        //   this.initializeHandlers();
+        //  this.setComponentsDefaultValues();
         this.initializeFrame();
     }
 
     /**
      * Initialize UI components
      */
-   /* private void initializeUiComponents() {
+    private void initializeUiComponents() {
         final JLabel typeProductId = new JLabel("Type product Id:");
         typeProductId.setBounds(5, 5, 150, 20);
 
         this.pinProductId = new JTextField("");
         this.pinProductId.setBounds(170, 5, 200, 20);
 
+        this.pinProductPrice = new JTextField();
+        this.pinProductPrice.setBounds(200, 5, 250, 20);
+
+
         this.addProductToCatalogueButton = new JButton("Add Product To Catalogue");
         this.addProductToCatalogueButton.setBounds(5, 30, 365, 20);
 
         this.updateProducePriceButton = new JButton("Update Produce Price");
-        this.updateProducePriceButton.setBounds(5, 40, 370, 20);
+        this.updateProducePriceButton.setBounds(5, 50, 400, 20);
 
         //final JLabel doorStatusLabel = new JLabel("Door status:");
         //doorStatusLabel.setBounds(5, 60, 150, 20);
@@ -50,6 +55,7 @@ public class MainScreen extends JFrame {
         // add elements to frame
         add(typeProductId);
         add(pinProductId);
+        add(pinProductPrice);
         add(addProductToCatalogueButton);
         add(updateProducePriceButton);
         //add(doorStatusTextField);
@@ -59,14 +65,14 @@ public class MainScreen extends JFrame {
     /**
      * Initialize frame
      */
- /*   private void initializeFrame() {
+    private void initializeFrame() {
         setLayout(new BorderLayout());
         setVisible(true);
         setSize(400, 200);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
-    private void initializeHandlers() {
+   /* private void initializeHandlers() {
         this.enterPinButton.addActionListener(e -> {
             final String enteredPin = pinAccessCodeTextField.getText();
 
@@ -90,8 +96,9 @@ public class MainScreen extends JFrame {
     private void initializeHandlers() {
         this.updateProducePriceButton.addActionListener(e -> {
             final String enteredPin = pinProductId.getText();
-            try{
-                final Product updatedProduct=this.controller.updateProductPriceByProductId(enteredPin, 0.0);
+            final String enteredPrice = pinProductPrice.getText();
+            try {
+                final Product updatedProduct = this.controller.updateProductPriceByProductId(enteredPin, (double) enteredPrice);
 
             }
         }

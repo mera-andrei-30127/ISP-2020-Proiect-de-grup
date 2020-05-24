@@ -56,12 +56,9 @@ public class UserCart implements ICartDetails {
                 break;
             }
         }
-
         if (ok == 1) {
             throw new ProductNotFoundException();
         }
-
-
     }
 
     /**

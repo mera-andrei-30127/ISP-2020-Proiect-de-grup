@@ -7,7 +7,7 @@ public class OnlineShop extends Shop {
     private String webAddress;
 
     public OnlineShop(String name, String city, String webAddress) {
-        super(name,city);
+        super(name, city);
         this.webAddress = webAddress;
     }
 
